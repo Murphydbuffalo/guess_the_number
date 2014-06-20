@@ -1,19 +1,27 @@
-var name = prompt('Welcome! What\'s your name?');
+var secretNumber = (Math.floor(Math.random() * 99) + 1);
 
-var secretNumber = (Math.floor(Math.random() * 100) + 1);
+$('#submit').on('click', function(event) {
+  event.preventDefault();
+	var $guess = $('#guess').val();
+	$('.guesses ul').append('<li>' + $guess + '</li>');
+})
 
-if(name.length > 0) {
-	alert('Hi, ' + name + '.')
+/*function getInput() {
+	prompt('Please guess a number between 1 and 100.');
+}
 
-	for(var input = prompt('Please guess a number between 1 and 100.'); input != secretNumber; input = prompt('Guess again!')){
+
+	for(var input = getInput(); input != secretNumber; input = prompt('Guess again!')){
 		if(input < secretNumber){
-			alert('Too low!')
+			alert('Too low!');
 		}
 		else if(input > secretNumber) {
-			alert('Too high!')
+			alert('Too high!');
 		}
 	}
 
-  alert('You got it!');
-}
+alert('You got it!');*/
+
+
+
 
